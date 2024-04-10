@@ -16,7 +16,38 @@
 
 
 
-curriculos = {"Vaga 1": [],
-               "Vaga 2": [] }
+curriculos = {
+    "Vaga 1": [],
+    "Vaga 2": [],
+    "Desacarte": []
+}
+
+
+while True:
+    QualVaga = input("Digite a Vaga selecionada 1 ou 2 (00 pra sair)>>")
+    def verif(vaga,nome, resumo):
+        return curriculos["Vaga " + vaga].append({"Nome": nome, "Minibio": resumo})
+    def Desacarte(nome, resumo):
+        return curriculos["Desacarte"].append({"Nome": nome, "Minibio": resumo})
+
+    if QualVaga == '1':
+        Nome = input("Digite seu nome>>")
+        resumo = input("Digite seu minibio>>")
+        if "Python" in resumo or "Programacao" in resumo or "Desenvolvimento" in resumo:
+            verif(QualVaga, Nome, resumo)
+        else:
+            Desacarte(Nome, resumo)
+    elif QualVaga == '2':
+        Nome = input("Digit seu nome>>")
+        resumo = input("Digite seu minibio>>")
+        if "Analise de dados" in resumo or "Dados" in resumo or "SQL" in resumo:
+            verif(QualVaga, Nome, resumo)
+        else:
+            Desacarte(Nome, resumo)
+
+    elif QualVaga == '00':
+        break
+    else:
+        print("Numero invalido")
 
 print(curriculos)
